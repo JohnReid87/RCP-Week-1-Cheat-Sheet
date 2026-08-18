@@ -1,0 +1,552 @@
+Content is user-generated and unverified.
+1
+Learn about artifacts
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RCP Recaps — S2 Midnight Normal/Heroic, Week 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1520;
+    --panel:#1b2a3c;
+    --panel-2:#22344a;
+    --rule:#33475f;
+    --ink:#dce6f1;
+    --ink-dim:#93a6bb;
+    --head:#f2f7fc;
+    --ability:#5fb3e8;
+    --blood:#e8635f;
+    --shadow:#a98fe0;
+    --fire:#e8a33f;
+    --venom:#6fd08c;
+    --focus:#ffd166;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  a{color:inherit}
+
+  /* ---------- header ---------- */
+  header.masthead{
+    padding:2.5rem 1.25rem 1.5rem;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .eyebrow{
+    font-family:"Barlow Condensed",sans-serif;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.8rem;
+    color:var(--ink-dim);
+    margin:0 0 .4rem;
+  }
+  h1{
+    font-family:"Barlow Condensed",sans-serif;
+    font-weight:700;
+    font-size:clamp(2rem,6vw,3.25rem);
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    margin:0;
+    color:var(--head);
+  }
+
+  /* ---------- sticky nav ---------- */
+  nav.bosses{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:rgba(13,21,32,.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-inner{
+    max-width:1180px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem;
+    align-items:center;
+    padding:.6rem 1.25rem;
+  }
+  nav.bosses a{
+    font-family:"Barlow Condensed",sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.95rem;
+    text-decoration:none;
+    color:var(--ink-dim);
+    padding:.25rem .55rem;
+    border:1px solid transparent;
+    border-radius:3px;
+  }
+  nav.bosses a:hover,nav.bosses a:focus-visible{
+    color:var(--head);
+    border-color:var(--rule);
+    background:var(--panel);
+  }
+  nav.bosses a .num{color:var(--ability);font-weight:700;margin-right:.3rem}
+  .toggle{
+    margin-left:auto;
+    font-family:"Barlow Condensed",sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.9rem;
+    background:var(--panel);
+    color:var(--ink);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:.35rem .7rem;
+    cursor:pointer;
+  }
+  .toggle:hover{background:var(--panel-2)}
+  body.hide-heroic .heroic{display:none}
+
+  /* ---------- boss blocks ---------- */
+  main{max-width:1180px;margin:0 auto;padding:0 1.25rem 5rem}
+  .boss{
+    margin-top:2.5rem;
+    border:1px solid var(--rule);
+    border-radius:4px;
+    overflow:hidden;
+    background:var(--panel);
+  }
+  .boss-head{
+    display:flex;
+    align-items:baseline;
+    gap:.75rem;
+    padding:.9rem 1.25rem;
+    background:var(--panel-2);
+    border-bottom:1px solid var(--rule);
+  }
+  .boss-head .n{
+    font-family:"Barlow Condensed",sans-serif;
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--ability);
+    line-height:1;
+  }
+  .boss-head h2{
+    font-family:"Barlow Condensed",sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    font-size:clamp(1.5rem,3.5vw,2.1rem);
+    margin:0;
+    color:var(--head);
+  }
+  .quick{
+    padding:.8rem 1.25rem;
+    border-bottom:1px solid var(--rule);
+    font-size:.95rem;
+  }
+  .quick .label{
+    font-family:"Barlow Condensed",sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--ink-dim);
+    margin-right:.4rem;
+  }
+  .cols{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0 2rem;
+    padding:1rem 1.25rem 1.5rem;
+  }
+  .cols.two{grid-template-columns:1fr 1fr}
+  @media (max-width:820px){.cols.two{grid-template-columns:1fr}}
+
+  h3{
+    font-family:"Barlow Condensed",sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--head);
+    margin:1.25rem 0 .45rem;
+    padding-bottom:.25rem;
+    border-bottom:1px solid var(--rule);
+  }
+  h3:first-child{margin-top:.25rem}
+  h3.blood{color:var(--blood)}
+  h3.shadow{color:var(--shadow)}
+  h3.fire{color:var(--fire)}
+
+  ul{list-style:none;margin:0;padding:0}
+  li{
+    position:relative;
+    padding-left:1rem;
+    margin:.22rem 0;
+  }
+  li::before{
+    content:"–";
+    position:absolute;
+    left:0;
+    color:var(--ink-dim);
+  }
+  ul ul{margin:.15rem 0 .15rem .9rem}
+  ul ul li::before{content:"––";left:-.35rem;font-size:.85em}
+  ul ul ul li::before{content:"–"}
+
+  .a{color:var(--ability);font-weight:500}
+  .a.blood{color:var(--blood)}
+  .a.shadow{color:var(--shadow)}
+  .a.fire{color:var(--fire)}
+  .a.venom{color:var(--venom)}
+
+  footer{
+    max-width:1180px;
+    margin:0 auto;
+    padding:2rem 1.25rem 4rem;
+    color:var(--ink-dim);
+    font-size:.85rem;
+    border-top:1px solid var(--rule);
+  }
+  :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+  @media print{
+    body{background:#fff;color:#000}
+    nav.bosses{display:none}
+    .boss{break-inside:avoid;border-color:#999;background:#fff}
+    .boss-head,.quick{background:#eee}
+    .boss-head h2,h3,.a{color:#000}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <p class="eyebrow">RCP Recaps — S2 Midnight</p>
+  <h1>Normal / Heroic — Week 1</h1>
+</header>
+
+<nav class="bosses" aria-label="Bosses">
+  <div class="nav-inner">
+    <a href="#nekzali"><span class="num">1</span>Nek'zali</a>
+    <a href="#sentinels"><span class="num">2</span>Entombed Sentinels</a>
+    <a href="#vashnik"><span class="num">3</span>Vashnik</a>
+    <a href="#explorers"><span class="num">4</span>Lost Explorers</a>
+    <a href="#sszorak"><span class="num">5</span>Sszorak</a>
+    <a href="#twinfangs"><span class="num">6</span>Twin Fangs</a>
+    <a href="#coiledaltar"><span class="num">7</span>Coiled Altar</a>
+    <button class="toggle" id="heroicToggle" aria-pressed="false">Hide Heroic notes</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- 1 -->
+<section class="boss" id="nekzali">
+  <div class="boss-head"><span class="n">[1]</span><h2>Nek'zali</h2></div>
+  <p class="quick"><span class="label">Quick info:</span>single target + add cleave, 2 phases + intermission, Bloodlust on pull or in Phase 2</p>
+  <div class="cols">
+    <div>
+      <h3>The whole fight:</h3>
+      <ul>
+        <li><span class="a">Soulcoil Rite</span> is big raid-wide damage whenever the boss cast <span class="a">Soulcoil Ignite</span> or if an add walks into the Soulwell
+          <ul><li class="heroic">on Heroic, <span class="a">Soulcoil Rite</span> increases the damage of future <span class="a">Soulcoil Rite's</span> by 15%</li></ul>
+        </li>
+      </ul>
+
+      <h3>Phase 1:</h3>
+      <ul>
+        <li><span class="a">Restless Amani</span>: a bunch of adds spawn that need to be grip, stunned, and killed before they get to the Soulwell</li>
+        <li><span class="a">Essence Rend</span>: players with an arrow above their head, run to the wall, then get dispelled to drop a pool</li>
+        <li>tanks &amp; healers, run away from the boss whenever she cast <span class="a">Possession Barrage</span> to reduce the damage to the raid.
+          <ul><li class="heroic">on Heroic, tanks gain stacks of <span class="a">Hollowed</span> and should taunt swap whenever the debuff falls off.</li></ul>
+        </li>
+        <li>tanks, melee's from the boss cause stacks of <span class="a">Hollowed</span>, reducing the healing you receive by 5% per stack.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Intermission:</h3>
+      <ul>
+        <li>kill both Echose of Jawae one at a time</li>
+        <li><span class="a">Hungering Pyre</span>: half the raid soaks the big red group soak and half stays out. Players who stay out get little red fire circles
+          <ul><li class="heroic">on Heroic, put the fire circles on dead Amani corpses to burn them and stop them from resurrecting</li></ul>
+        </li>
+        <li>healers, watch players with the <span class="a">Residual Toll</span> debuff</li>
+      </ul>
+
+      <h3>Phase 2:</h3>
+      <ul>
+        <li>Phase 1 but now you get more Soulcoil Rites from the boss casting <span class="a">Invoke</span> and the pools on the ground now move around randomly.</li>
+        <li>kill the boss before she gets to full energy and wipes the raid.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="boss" id="sentinels">
+  <div class="boss-head"><span class="n">[2]</span><h2>Entombed Sentinels</h2></div>
+  <p class="quick"><span class="label">Quick info:</span>1 phase, mostly single target, Bloodlust on pull</p>
+  <div class="cols two">
+    <div>
+      <h3>Before the fight:</h3>
+      <ul>
+        <li>split the raid evenly between the two bosses and keep them 40+ yards apart</li>
+      </ul>
+
+      <h3>Green boss:</h3>
+      <ul>
+        <li><span class="a venom">Venom Coagulation</span>: swap to the slime add and kill it before another one spawns</li>
+        <li><span class="a venom">Toxic Droplets</span>: run over the green droplets before they explode and hit the raid</li>
+        <li>tanks, <span class="a">Empowering Slam</span> is a big tank hit + physical damage increase</li>
+        <li class="heroic">on Heroic, droplets and <span class="a">Empowering Slam</span> dodge the spikes that shoot back at the boss</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Red boss:</h3>
+      <ul>
+        <li><span class="a blood">Unstable Miasma</span>: red side group soak</li>
+        <li><span class="a blood">Blighted Blood</span>: dispellable DoTs on several players</li>
+        <li>tanks, <span class="a blood">Bloodvenom Injection</span> is a big hit + magic damage increase</li>
+        <li class="heroic">on Heroic, anyone who soaked drops an expanding pool</li>
+      </ul>
+
+      <h3>Intermission:</h3>
+      <ul>
+        <li>the bosses come together, gain 99% damage reduction, and the lower-health boss heals</li>
+        <li>match players so the green orbs above your heads add up to exactly 4 <span class="a venom">(1 + 3)</span> <span class="a">(2 + 2)</span></li>
+        <li>tanks swap bosses when the intermission ends and then it's back to the main phase.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="boss" id="vashnik">
+  <div class="boss-head"><span class="n">[3]</span><h2>Vashnik</h2></div>
+  <p class="quick"><span class="label">Quick info:</span>1 phase, multi-target, Bloodlust on pull</p>
+  <div class="cols two">
+    <div>
+      <h3>The whole fight:</h3>
+      <ul>
+        <li>position the boss between 2 fountains before he reaches full energy and cast <span class="a">Imbibe</span></li>
+        <li><span class="a">Imbibe</span> activates the 2 closest fountains, spawning their adds and giving players their unique debuffs
+          <ul>
+            <li>once the adds are dead, move to the next pair of fountains and repeat
+              <ul><li>the overlapping fountain gets stronger when it's activated twice in a row</li></ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Other mechanics:</h3>
+      <ul>
+        <li>tanks, swap after each <span class="a">Dripping Fangs</span></li>
+        <li class="heroic">on Heroic, <span class="a">Malignant Catalyst</span> is big raid-wide damage</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="blood">Blood fountain:</h3>
+      <ul>
+        <li>single add that can't be CC'd and splits into smaller adds when it dies</li>
+        <li>players with a leech circle can't be healed until several other players stand inside their circle</li>
+      </ul>
+
+      <h3 class="shadow">Shadow fountain:</h3>
+      <ul>
+        <li>AoE down the little adds and dodge the swirlies they shoot when they die</li>
+        <li>targeted players get a healing absorb and repeatedly spawn swirlies at their feet</li>
+      </ul>
+
+      <h3 class="fire">Fire fountain:</h3>
+      <ul>
+        <li>the 2 adds pulse raid-wide damage while they're alive and explode when they die
+          <ul><li class="heroic">on Heroic, each add that dies also puts a stacking DoT on the raid</li></ul>
+        </li>
+        <li>players with a big explosion circle, run away from the raid to reduce the damage</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="boss" id="explorers">
+  <div class="boss-head"><span class="n">[4]</span><h2>Lost Explorers</h2></div>
+  <p class="quick"><span class="label">Quick info:</span>1 phase, mostly 2 target cleave, Bloodlust on pull</p>
+  <div class="cols two">
+    <div>
+      <h3>The whole fight:</h3>
+      <ul>
+        <li>open Gebbo's boxes until you find the fish and use it before <span class="a">Mor'zahi</span> reaches full energy</li>
+        <li>recommended fish order: Nama, Iku, Gebbo</li>
+        <li class="heroic">on Heroic, keep Nama with either Iku or Gebbo, but never both or all 3 gain 99% damage reduction</li>
+      </ul>
+
+      <h3>Nama:</h3>
+      <ul>
+        <li>melee bait and dodge <span class="a">Shell Spin</span></li>
+        <li><span class="a">Mighty Thud</span>: split into 3 group soaks, then move out of the patches</li>
+      </ul>
+
+      <h3>Iku:</h3>
+      <ul>
+        <li>interrupt <span class="a">Icebound Flames</span></li>
+        <li><span class="a">Blink Nova</span> target runs away to reduce the raid-wide damage</li>
+        <li><span class="a">Frostfire Volley</span>: pair Fire with Frost circles, drop beside each other, then run into the opposite patch</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Gebbo:</h3>
+      <ul>
+        <li><span class="a">Throw Junk</span>: dodge boxes and spread out to open them</li>
+        <li>drop the bomb near the edge, then bounce over the blast wave with a mushroom</li>
+      </ul>
+
+      <h3>Tanks:</h3>
+      <ul>
+        <li>cross-taunt Nama and Iku around 7 <span class="a">Shredding Shards</span> stacks</li>
+        <li>keep Nama beside whichever turtle has more health and pull the lower health one away</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="boss" id="sszorak">
+  <div class="boss-head"><span class="n">[5]</span><h2>Sszorak</h2></div>
+  <p class="quick"><span class="label">Quick info:</span>1 phase, full single target, Bloodlust on pull or during Dig In</p>
+  <div class="cols two">
+    <div>
+      <h3>The whole fight:</h3>
+      <ul>
+        <li>place 3 world markers opposite the 3 tornado clusters</li>
+        <li><span class="a">Venomous Surge</span>: 2 players take the green arrows to the markers and drop the green blobs</li>
+        <li>players targeted with white wind circles should pair up and point your line toward each other to collide when launched</li>
+        <li><span class="a">Dig In</span> (intermission): outer tornados push the raid. Get pushed into a blob so its knockback sends everyone back onto the platform
+          <ul><li>the boss takes 30% increased damage during <span class="a">Dig In</span></li></ul>
+        </li>
+        <li>Tank frontal combo: <span class="a">Ravage</span> (white) is soaked by a tank, <span class="a venom">Mutilate</span> (green) is group soaked</li>
+        <li>Tanks taunt swap if <span class="a venom">Corroding Venom</span> stacks get too high</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Heroic:</h3>
+      <ul>
+        <li class="heroic">repeat <span class="a">Mutilates</span> hit much harder (split the raid into 2 soak groups if needed)</li>
+        <li class="heroic"><span class="a">Venomous Surge</span> drops poison patches; place them near the edge and keep the middle clear</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="boss" id="twinfangs">
+  <div class="boss-head"><span class="n">[6]</span><h2>Twin Fangs</h2></div>
+  <p class="quick"><span class="label">Quick info:</span>1 phase, two-target cleave, Bloodlust on pull</p>
+  <div class="cols two">
+    <div>
+      <h3>The whole fight:</h3>
+      <ul>
+        <li>the fight revolves around stacks of the <span class="a">Eternal Venom</span> debuff.
+          <ul>
+            <li>getting hit by any poison mechanics gives additional stacks</li>
+            <li class="heroic">on Heroic, 10 stacks instantly kills you</li>
+          </ul>
+        </li>
+        <li>run over the green orbs before they explode</li>
+        <li>when mini snake adds spawn point their targeted lines away and stop moving</li>
+        <li>red circles move to the edge and wait for them to expire
+          <ul><li class="heroic">on Heroic, red circles leave behind pools when they expire</li></ul>
+        </li>
+        <li><span class="a">Ravenous Feast</span>: get into the 3-hit group soak to remove <span class="a">Venom</span> stacks</li>
+        <li class="heroic">on Heroic, split the raid into 3 groups for <span class="a">Ravenous Feast</span>, one group per hit</li>
+        <li>tanks, soak all 3 <span class="a">Stone Breaker</span> hits and swap after each set</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Intermission:</h3>
+      <ul>
+        <li>move toward <span class="a">Ithraz</span> while dodging <span class="a">Vexhul's</span> rotating poison beam</li>
+        <li>big wash your feet here</li>
+        <li>after the beam finishes, the bosses regroup and the main phase repeats</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="boss" id="coiledaltar">
+  <div class="boss-head"><span class="n">[7]</span><h2>Coiled Altar</h2></div>
+  <p class="quick"><span class="label">Quick info:</span>p1 + p2 single target, Bloodlust intermission, P3 2-target cleave</p>
+  <div class="cols two">
+    <div>
+      <h3>Assignments:</h3>
+      <ul>
+        <li>place world markers at both ends of the platform for tank frontals</li>
+        <li>2 to 3 mobile players to collect and stack green orbs</li>
+        <li class="heroic">Heroic: split raid into 2 <span class="a">Guillotine</span> soak groups</li>
+        <li class="heroic">Heroic: assign 2 to 3 interrupts for <span class="a">Wail of Terror</span> in p2</li>
+      </ul>
+
+      <h3>Phase 1: Zul'jan</h3>
+      <ul>
+        <li>collect green orbs near a marker + tanks use <span class="a">Sever</span> to destroy a few at a time</li>
+        <li>leftover orbs explode when <span class="a">Zul'jan</span> dies (use healer cd's)</li>
+        <li class="heroic">Heroic: each destroyed orb adds a stacking raid DoT</li>
+        <li>tanks, swap after every <span class="a">Sever</span></li>
+        <li><span class="a venom">Guillotine</span>: group soak near the edge + run away from the huge explosion</li>
+        <li class="heroic">Heroic: alternate soak groups</li>
+        <li>dispel <span class="a venom">Venomfang</span> Poisons</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Phase 2: Malacrass</h3>
+      <ul>
+        <li><span class="a shadow">Dreadmarch</span>: break the MC shields before players walk off the edge</li>
+        <li>bring fixate ghosts to the marker + stare at them to stop them + tank frontal destroys them</li>
+        <li>tanks, swap after every <span class="a shadow">Soul Sever</span> and collect your <span class="a shadow">Soul Fragments</span></li>
+        <li>run away with the big purple circles + collect your <span class="a shadow">Soul Fragments</span> after they explode (<span class="a venom">Gloombomb</span>)</li>
+        <li><span class="a shadow">Eternal Nightfall</span>: break shield + interrupt the cast</li>
+        <li class="heroic">Heroic: interrupt and kill the <span class="a">Spiteful Soulcoiler</span> add</li>
+      </ul>
+
+      <h3>Intermission: Bloodlust</h3>
+      <ul>
+        <li>Bloodlust + blast Zul'jan while he takes 100% increased damage</li>
+        <li>run into some green <span class="a venom">Soul Fragments</span> before they reach and heal Zul'jan</li>
+        <li>each fragment you stop damages the raid + use raid CDs</li>
+      </ul>
+
+      <h3>Phase 3: Both bosses:</h3>
+      <ul>
+        <li>stack green orbs + <span class="a shadow">Dreadmarch</span> ghosts for the tank frontal</li>
+        <li>tanks, swap after every frontal + collect <span class="a shadow">Soul Fragments</span></li>
+        <li>heal through Zul'jan's huge raid-wide healing absorbs (<span class="a">Defilement of the Coiled Altar</span>)</li>
+        <li>keep both bosses close in HP and kill them together</li>
+        <li class="heroic">Heroic: <span class="a venom">Guillotine</span> soaks force the raid back and forth across the platform</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Transcribed from the RCP Recaps week 1 image. Text is reproduced as written in the source.
+</footer>
+
+<script>
+  const btn = document.getElementById('heroicToggle');
+  btn.addEventListener('click', () => {
+    const hidden = document.body.classList.toggle('hide-heroic');
+    btn.setAttribute('aria-pressed', String(hidden));
+    btn.textContent = hidden ? 'Show Heroic notes' : 'Hide Heroic notes';
+  });
+</script>
+</body>
+</html>
